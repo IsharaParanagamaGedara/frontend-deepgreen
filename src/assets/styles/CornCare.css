@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  width: 100%;
+  height: 100vh;
+  background: rgb(254, 254, 254);
+}
+
+.main-menu {
+  background: #4caf50;
+  padding-top: 10px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.logo-icon {
+  margin-right: 10px;
+}
+
+.main-menu h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.main-menu ul {
+  list-style: none;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 10px 0;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.nav-item.active a,
+.nav-item a:hover {
+  background: #fff;
+  color: #4caf50;
+}
+
+.nav-icon {
+  margin-right: 10px;
+}
+
+.nav-text {
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+main {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  font-size: 1.2rem;
+  color: #4caf50;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.back-link i {
+  margin-right: 10px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4caf50;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-section {
+  display: flex;
+  align-items: center;
+  background: #e6f5e8;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.info-section .plant-image {
+  margin-right: 20px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.plant-details p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.plant-details strong {
+  color: #4caf50;
+}
+
+hr {
+  border: 1px solid #4caf50;
+}
+
+.disease-section,
+.cure-section {
+  background: #f6f7fb;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.disease-section h2,
+.cure-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #4caf50;
+}
+
+.disease-section h3,
+.cure-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.disease-section p,
+.cure-section p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.cure-section ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.cure-section ul li {
+  font-size: 1rem;
+  margin-top: 5px;
+  list-style: disc;
+}
+
+.disease-image {
+  margin: 10px 0;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.disease-info,
+.cure-info {
+  margin-bottom: 20px;
+}
+
+.disease-details,
+.cure-details {
+  display: none;
+}
+
+.disease-section h3:hover,
+.cure-section h3:hover {
+  color: #388e3c;
+}
+
+h2,
+h3 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 .fas,
+h3 .fas {
+  margin-left: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 60px auto;
+  }
+
+  .main-menu {
+    width: 60px;
+  }
+
+  .logo-container h1,
+  .nav-text {
+    display: none;
+  }
+
+  .nav-icon {
+    margin: 10;
+  }
+
+  .nav-item a {
+    justify-content: center;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+}
+
