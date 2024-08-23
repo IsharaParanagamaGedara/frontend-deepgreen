@@ -1,0 +1,120 @@
+/* Auth.css */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(180deg,#fff 0%, #67cf78 40%, #0e914f 80%);
+  }
+  
+  .auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .auth-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Ensure labels are left-aligned */
+  }
+  
+  .auth-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    text-align: left; /* Ensure labels are left-aligned */
+  }
+  
+  .auth-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .auth-button {
+    background: #67cf78;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  
+  .auth-button:hover {
+    background: #0e914f;
+  }
+  
+  .auth-footer {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .auth-footer a {
+    color: #67cf78;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .auth-footer a:hover {
+    color: #0e914f;
+  }
+  
+  .forgot-password-link {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #67cf78;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+.forgot-password-link:hover {
+    color: #0e914f;
+}
+
+
+
+.auth-error {
+  color: #f44336; /* Red color */
+  background-color: #ffebee; /* Light red background */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-message {
+  color: #4CAF50; /* Green color */
+  background-color: #e8f5e9; /* Light green background */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
