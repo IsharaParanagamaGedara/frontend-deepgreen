@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  width: 100%;
+  height: 100vh;
+  background: rgb(254, 254, 254);
+}
+
+.main-menu {
+  background: #4CAF50; /* Green color */
+  padding-top: 10px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.logo-icon {
+  margin-right: 10px;
+}
+
+.main-menu h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.main-menu ul {
+  list-style: none;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 10px 0;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-item.active a,
+.nav-item a:hover {
+  background: #fff;
+  color: #4CAF50; /* Green color */
+}
+
+.nav-icon {
+  margin-right: 10px;
+}
+
+.nav-text {
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+main {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4CAF50; /* Green color */
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upload-section {
+  background: #f6f7fb;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  text-align: center;
+}
+
+.upload-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-box {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #4CAF50; /* Green color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.upload-box:hover {
+  background-color: #e6f5e8; /* Light green color */
+}
+
+.upload-icon {
+  text-align: center;
+  color: #4CAF50; /* Green color */
+}
+
+.upload-icon i {
+  font-size: 3rem;
+}
+
+.upload-icon p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  padding: 10px 20px;
+  background: #4CAF50; /* Green color */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.file-label:hover {
+  background: #45a049; /* Darker green color */
+}
+
+.predict-btn {
+  padding: 10px 20px;
+  background: #4CAF50; /* Green color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.predict-btn:hover {
+  background: #45a049; /* Darker green color */
+}
+
+.friendly-message {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #555; /* Green color */;
+}
+
+.friendly-message:hover {
+  font-weight: 700;
+  color: #45a049; /* Darker green color */
+}
+
+.prediction-result {
+  background: #e6f5e8;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  text-align: center;
+}
+
+.prediction-result h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.result-details p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.disease-name,
+.confidence-level {
+  font-weight: 700;
+  color: #4CAF50; /* Green color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 60px auto;
+  }
+
+  .main-menu {
+    width: 60px;
+  }
+
+  .logo-container h1,
+  .nav-text {
+    display: none;
+  }
+
+  .nav-icon {
+    margin: 10;
+  }
+
+  .nav-item a {
+    justify-content: center;
+  }
+}
+
+.error-message {
+  color: #f44336; /* Red color */
+  background-color: #ffebee; /* Light red background */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-message {
+  color: #4CAF50; /* Green color */
+  background-color: #e8f5e9; /* Light green background */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
