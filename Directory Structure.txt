@@ -1,0 +1,78 @@
+deepgreen-frontend/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+|
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── plant care/
+│   │   │   ├── deepgreen-icon.jpg
+│   │   │   ├── deepgreen-icon.png
+│   │   │   ├── feature2.jpg
+│   │   │   ├── feature3.jpg
+│   │   │   ├── hero1.jpg
+│   │   │   ├── hero2.jpg
+│   │   │   ├── hero3.jpg
+│   │   │   ├── step1.jpg
+│   │   │   ├── step2.jpg
+│   │   │   ├── step3.jpg
+│   │   │   ├── step4.jpg
+│   │   │   ├── testimonial1.jpg
+│   │   │   ├── testimonial2.jpg
+│   │   │   ├── testimonial3.jpg
+│   │   │   └── user-profile.jpg
+|   |   |
+│   │   └── styles/
+│   │       ├── Auth.css
+│   │       ├── AIDetector.css
+│   │       ├── PlantCare.css
+│   │       ├── CornCare.css
+│   │       ├── PotatoCare.css
+│   │       ├── StrawberryCare.css
+│   │       ├── History.css
+│   │       ├── Profile.css
+│   │       ├── Stat.css
+│   │       ├── Help.css
+│   │       ├── Survey.css
+│   │       ├── Dashboard.css
+│   │       └── LandingPage.css
+│   │
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Hero.js
+│   │   ├── Features.js
+│   │   ├── HowItWorks.js
+│   │   ├── Testimonials.js
+│   │   ├── About.js
+│   │   ├── Contact.js
+│   │   ├── Footer.js
+│   │   ├── LandingPage.js
+│   │   ├── Login.js
+│   │   ├── Register.js
+│   │   ├── ForgotPassword.js
+│   │   ├── ResetPassword.js
+│   │   ├── AIDetector.js
+│   │   ├── PlantCare.js
+│   │   ├── CornCare.js
+│   │   ├── PotatoCare.js
+│   │   ├── StrawberryCare.js
+│   │   ├── History.js
+│   │   ├── Profile.js
+│   │   ├── Stat.js
+│   │   ├── Help.js
+│   │   ├── UserSatisfactionSurvey.js
+│   │   └── Dashboard.js
+│   │
+│   ├── api.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   ├── index.css
+│   └── serviceWorker.js
+│   
+├── package-lock.json
+├── package.json
+├── README.md
+└── .gitignore
