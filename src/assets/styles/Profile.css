@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  width: 100%;
+  height: 100vh;
+  background: rgb(254, 254, 254);
+}
+
+.main-menu {
+  background: #4CAF50; /* Green color */
+  padding-top: 10px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.logo-icon {
+  margin-right: 10px;
+}
+
+.main-menu h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.main-menu ul {
+  list-style: none;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 10px 0;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.nav-item.active a,
+.nav-item a:hover {
+  background: #fff;
+  color: #4CAF50; /* Green color */
+}
+
+.nav-icon {
+  margin-right: 10px;
+}
+
+.nav-text {
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+main {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4CAF50; /* Green color */
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-image-section,
+.profile-info-section {
+  background-color: #e6f5e8;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.profile-image-section:hover {
+  border: 2px dashed #4CAF50; /* Green color */
+}
+
+.profile-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  flex-direction: column; /* Stack content vertically */
+  gap: 20px;
+  text-align: center; /* Center the text */
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-message {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-message h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4CAF50; /* Green color */
+}
+
+.profile-message p {
+  font-size: 1rem;
+  color: #4CAF50; /* Green color */
+}
+
+.profile-info-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4CAF50; /* Green color */
+  margin-bottom: 20px;
+}
+
+.profile-info-section label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4CAF50; /* Green color */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.profile-info-section input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #4CAF50; /* Green color */
+  font-size: 1rem;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.update-btn {
+  background: #4CAF50; /* Green color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.update-btn:hover {
+  background: #45a049; /* Darker green color */
+}
+
+@media (max-width: 1200px) {
+  .dashboard {
+    grid-template-columns: 20% 80%;
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard {
+    grid-template-columns: 25% 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 60px auto;
+  }
+
+  .main-menu {
+    width: 60px;
+  }
+
+  .logo-container h1,
+  .nav-text {
+    display: none;
+  }
+
+  .nav-icon {
+    margin: 10;
+  }
+
+  .nav-item a {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    padding: 10px;
+  }
+
+  .profile-image-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-message h3,
+  .profile-message p,
+  .profile-info-section h2,
+  .profile-info-section label,
+  .profile-info-section input {
+    font-size: 0.9rem;
+  }
+
+  .profile-info-section input {
+    padding: 8px;
+  }
+
+  .update-btn {
+    padding: 8px 16px;
+  }
+
+  .profile-info-section {
+    padding: 10px;
+  }
+}
+
+.error-message {
+  color: #f44336; /* Red color */
+  background-color: #ffebee; /* Light red background */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
