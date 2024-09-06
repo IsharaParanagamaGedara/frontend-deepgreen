@@ -3,24 +3,46 @@ import { useDropzone } from 'react-dropzone';
 import '../assets/styles/AIDetector.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { saveAs } from 'file-saver';
-import deepgreenLogo from '../assets/images/deepgreen-icon.jpg'; // Import the logo image
+import deepgreenLogo from '../assets/images/deepgreen-icon.jpg';
 
 const AIDetector = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [prediction, setPrediction] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(''); // State for success message
-  const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const onDrop = useCallback((acceptedFiles) => {
-    setSelectedFile(acceptedFiles[0]);
+  const onDrop = useCallback((acceptedFiles, fileRejections) => {
+    if (fileRejections.length > 0) {
+      setError('The file is not accepted for upload');
+      setSelectedFile(null);
+      return;
+    }
+
+    const file = acceptedFiles[0];
+    
+    if (file && !file.type.startsWith('image/')) {
+      setError('The file is not an image');
+      setSelectedFile(null);
+      return;
+    }
+
+    setSelectedFile(file);
     setError('');
-    setSuccessMessage(''); // Clear success message when a new file is selected
+    setSuccessMessage('');
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: 'image/*' });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: 'image/*',
+    maxFiles: 1,
+    onDropRejected: (fileRejections) => {
+      if (fileRejections.length > 0) {
+        setError('The file is not accepted for upload');
+      }
+    }
+  });
 
   const handlePredict = async () => {
     if (!selectedFile) {
@@ -42,7 +64,7 @@ const AIDetector = () => {
         }
       });
 
-      setSuccessMessage(uploadResponse.data.message); // Set success message
+      setSuccessMessage(uploadResponse.data.message);
 
       const { image_id } = uploadResponse.data;
 
@@ -130,10 +152,10 @@ const AIDetector = () => {
             <h2>Upload Plant Leaf Image</h2>
             <div {...getRootProps({ className: 'upload-container' })}>
               <input {...getInputProps()} />
-              <div className="upload-box">
+              <div className={`upload-box ${isDragActive ? 'active' : ''}`}>
                 <div className="upload-icon">
                   <i className="fas fa-cloud-upload-alt"></i>
-                  <p>{isDragActive ? 'Drop the files here...' : 'Drag & Drop your image here'}</p>
+                  <p>{isDragActive ? 'Drop the files here...' : 'Drag & Drop your image here or click to select'}</p>
                 </div>
               </div>
             </div>
@@ -145,7 +167,7 @@ const AIDetector = () => {
 
           {error && <p className="error-message">{error}</p>}
 
-          {successMessage && <p className="success-message">{successMessage}</p>} {/* Display success message */}
+          {successMessage && <p className="success-message">{successMessage}</p>}
 
           {prediction && (
             <div className="prediction-result">
