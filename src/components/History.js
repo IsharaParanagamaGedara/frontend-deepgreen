@@ -12,6 +12,7 @@ const History = () => {
   const [endDate, setEndDate] = useState('');
   const [filteredPredictions, setFilteredPredictions] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
+  const [error, setError] = useState(''); // Add state for error message
 
   useEffect(() => {
     fetchHistory();
@@ -26,18 +27,24 @@ const History = () => {
       });
       setPredictions(response.data);
       setFilteredPredictions(response.data);
+      setError(''); // Clear any error when data is successfully fetched
     } catch (error) {
       console.error('Error fetching prediction history:', error);
+      setError('Error fetching prediction history.');
     }
   };
 
   const handleFilter = () => {
-    fetchHistory(startDate, endDate);
+    if (startDate === '' && endDate === '') {
+      setFilteredPredictions(predictions);
+    } else {
+      fetchHistory(startDate, endDate);
+    }
   };
 
   const downloadReport = () => {
     if (filteredPredictions.length === 0) {
-      console.log('No data available to download.');
+      setError('No data available to download.');
       return;
     }
 
@@ -55,9 +62,15 @@ const History = () => {
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     saveAs(blob, 'prediction_history.csv');
     setSuccessMessage('CSV Report Downloaded Successfully');
+    setError('');  // Clear any previous error message
   };
 
   const downloadPDFReport = async () => {
+    if (filteredPredictions.length === 0) {
+      setError('No data available to download.');
+      return;
+    }
+
     try {
       const token = localStorage.getItem('token');
       const response = await axios.get('http://127.0.0.1:5000/history/download_prediction_history_pdf', {
@@ -67,8 +80,10 @@ const History = () => {
       });
       saveAs(response.data, 'prediction_history.pdf');
       setSuccessMessage('PDF Report Downloaded Successfully');
+      setError('');  // Clear any previous error message
     } catch (error) {
       console.error('Error downloading PDF report:', error);
+      setError('Error downloading PDF report.');
     }
   };
 
@@ -106,7 +121,8 @@ const History = () => {
             <button id="download-pdf-report" className="download-btn" onClick={downloadPDFReport}><i className="fas fa-download"></i> Download PDF</button>
           </div>
 
-          {successMessage && <div className="success-message">{successMessage}</div>}
+          {error && <div className="error-message">{error}</div>} {/* Display error message */}
+          {successMessage && <div className="success-message">{successMessage}</div>} {/* Display success message */}
 
           <div className="history-section">
             <table>
