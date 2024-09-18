@@ -11,15 +11,15 @@ const Contact = () => {
         <div className="contact-info">
           <p>Contact us for questions, technical assistance, or collaboration opportunities via the contact information provided.</p>
           <div className="info-item">
-            <FontAwesomeIcon icon={faPhone} className="info-icon" />
+            <FontAwesomeIcon icon={faPhone} className="info-icon" data-testid="phone-icon" />
             <p>(031) 222-8888</p>
           </div>
           <div className="info-item">
-            <FontAwesomeIcon icon={faEnvelope} className="info-icon" />
+            <FontAwesomeIcon icon={faEnvelope} className="info-icon" data-testid="envelope-icon" />
             <p>info@deepgreen.com</p>
           </div>
           <div className="info-item">
-            <FontAwesomeIcon icon={faMapMarkerAlt} className="info-icon" />
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="info-icon" data-testid="map-marker-icon" />
             <p>153 Minuwangoda Rd., Negombo, 11500</p>
           </div>
         </div>

@@ -16,7 +16,7 @@ const Footer = () => {
         <a href="#faq">FAQs</a>
       </div>
       
-      <div className="go-to-top" onClick={scrollToTop}>
+      <div className="go-to-top" onClick={scrollToTop} data-testid="go-to-top">
         <FontAwesomeIcon icon={faArrowUp} />
       </div>
       
