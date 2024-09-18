@@ -14,7 +14,6 @@ const Login = () => {
     event.preventDefault();
     setError('');
 
-    // Basic form validation
     if (!email || !password) {
       setError('All fields are required.');
       return;
@@ -31,7 +30,7 @@ const Login = () => {
       const token = response.data.token;
       if (token) {
         localStorage.setItem('token', token);
-        navigate('/dashboard'); // Redirect to the dashboard
+        navigate('/dashboard');
       } else {
         setError('Login failed. Please try again.');
       }
@@ -46,7 +45,7 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2 className="auth-title">Login</h2>
+        <h2 className="auth-title" data-testid="login-title">Login</h2>
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="auth-input-group">
             <label htmlFor="email">Email</label>
@@ -56,7 +55,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              
+              data-testid="email-input"
             />
           </div>
           <div className="auth-input-group">
@@ -67,12 +66,12 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              
+              data-testid="password-input"
             />
           </div>
           <a href="/forgot-password" className="forgot-password-link">Forgot Password?</a>
-          {error && <p className="auth-error">{error}</p>}
-          <button type="submit" className="auth-button" disabled={loading}>
+          {error && <p className="auth-error" data-testid="auth-error">{error}</p>}
+          <button type="submit" className="auth-button" disabled={loading} data-testid="login-button">
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
@@ -85,4 +84,3 @@ const Login = () => {
 };
 
 export default Login;
-

@@ -37,7 +37,6 @@ const ResetPassword = () => {
     setMessage('');
     setError('');
 
-    // Basic form validation
     if (!password || !confirmPassword) {
       setError('All fields are required.');
       return;
@@ -78,7 +77,7 @@ const ResetPassword = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2 className="auth-title">Reset Password</h2>
+        <h2 className="auth-title" data-testid="reset-password-title">Reset Password</h2>
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="auth-input-group">
             <label htmlFor="password">New Password</label>
@@ -88,9 +87,9 @@ const ResetPassword = () => {
               value={password}
               onChange={handlePasswordChange}
               placeholder="Enter your new password"
-              
+              data-testid="password-input"
             />
-            {passwordError && <p className="auth-error">{passwordError}</p>}
+            {passwordError && <p className="auth-error" data-testid="password-error">{passwordError}</p>}
           </div>
           <div className="auth-input-group">
             <label htmlFor="confirm-password">Confirm New Password</label>
@@ -100,12 +99,12 @@ const ResetPassword = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm your new password"
-              
+              data-testid="confirm-password-input"
             />
           </div>
-          {message && <p className="auth-message">{message}</p>}
-          {error && <p className="auth-error">{error}</p>}
-          <button type="submit" className="auth-button" disabled={loading}>
+          {message && <p className="auth-message" data-testid="auth-message">{message}</p>}
+          {error && <p className="auth-error" data-testid="auth-error">{error}</p>}
+          <button type="submit" className="auth-button" disabled={loading} data-testid="submit-button">
             {loading ? 'Resetting...' : 'Reset Password'}
           </button>
         </form>
@@ -115,4 +114,3 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
-

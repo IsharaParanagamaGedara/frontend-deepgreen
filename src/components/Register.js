@@ -83,7 +83,7 @@ const Register = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2 className="auth-title">Register</h2>
+        <h2 className="auth-title" data-testid="register-title">Register</h2>
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="auth-input-group">
             <label htmlFor="firstName">First Name</label>
@@ -144,4 +144,3 @@ const Register = () => {
 };
 
 export default Register;
-
